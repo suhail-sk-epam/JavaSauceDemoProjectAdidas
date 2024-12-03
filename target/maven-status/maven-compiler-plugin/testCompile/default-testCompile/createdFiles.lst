@@ -1,0 +1,3 @@
+test\java\stepDefinitions\ProductPageSteps.class
+test\java\pages\ProductPage.class
+test\java\runner\TestRunner.class

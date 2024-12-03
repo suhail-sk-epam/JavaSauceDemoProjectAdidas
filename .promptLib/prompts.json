@@ -1,0 +1,140 @@
+{
+  "Explain Broken" : {
+    "description" : "Explain what is wrong with the code",
+    "template" : "Explain_Broken.yaml",
+    "external" : false,
+    "prompt_type" : "LOCAL_PROMPT"
+  },
+  "Refactor This" : {
+    "description" : "Refactors the code to be more readable",
+    "template" : "Refactor_This.yaml",
+    "external" : false,
+    "prompt_type" : "LOCAL_PROMPT"
+  },
+  "Comment Code" : {
+    "description" : "Add comments to the code",
+    "template" : "Comment_Code.yaml",
+    "external" : false,
+    "prompt_type" : "LOCAL_PROMPT"
+  },
+  "Add Unit Tests" : {
+    "description" : "Create unit-tests for selected code",
+    "template" : "Add_Unit_Tests.yaml",
+    "external" : false,
+    "prompt_type" : "LOCAL_PROMPT"
+  },
+  "Code Me This" : {
+    "description" : "Generate code based on the comment",
+    "template" : "Code_Me_This.yaml",
+    "external" : false,
+    "prompt_type" : "LOCAL_PROMPT"
+  },
+  "Improve user story and acceptance criteria based on evaluation report_prompt" : {
+    "description" : "This prompt is designed to gather expert feedback and recommenda",
+    "external" : true,
+    "prompt_id" : 41,
+    "prompt_type" : "PROMPT"
+  },
+  "BDD to RestAssured_prompt" : {
+    "description" : "BDD to RestAssured Gaurav",
+    "external" : true,
+    "prompt_id" : 24,
+    "prompt_type" : "PROMPT"
+  },
+  "Junit Tests Generation_prompt" : {
+    "description" : "",
+    "external" : true,
+    "prompt_id" : 29,
+    "prompt_type" : "PROMPT"
+  },
+  "Create BDD Tests from manual_prompt" : {
+    "description" : "The test cases converter BDD format (Gherkin syntax) is meticulo",
+    "external" : true,
+    "prompt_id" : 26,
+    "prompt_type" : "PROMPT"
+  },
+  "BDD to Code_prompt" : {
+    "description" : "BDD to Code",
+    "external" : true,
+    "prompt_id" : 25,
+    "prompt_type" : "PROMPT"
+  },
+  "Swagger PetStore Functional Test Cases Generator_prompt" : {
+    "description" : "This prompt generates the detailed functional test cases for Swa",
+    "external" : true,
+    "prompt_id" : 22,
+    "prompt_type" : "PROMPT"
+  },
+  "Create Step Definitions Code_prompt" : {
+    "description" : "This is to create step definitions code",
+    "external" : true,
+    "prompt_id" : 20,
+    "prompt_type" : "PROMPT"
+  },
+  "006 Generate UI Automation Code_prompt" : {
+    "description" : "This prompt helps generating UI automation code for the provided",
+    "external" : true,
+    "prompt_id" : 14,
+    "prompt_type" : "PROMPT"
+  },
+  "005 Create Feature File for UI_prompt" : {
+    "description" : "This prompt helps in converting the manual test case into a feat",
+    "external" : true,
+    "prompt_id" : 12,
+    "prompt_type" : "PROMPT"
+  },
+  "004 UI Test Automation Code Generator_prompt" : {
+    "description" : "This prompt helps to generate test automation code with minimal ",
+    "external" : true,
+    "prompt_id" : 11,
+    "prompt_type" : "PROMPT"
+  },
+  "003 BDD Generator for UI Test Cases_prompt" : {
+    "description" : "This prompt helps to generate BDD scenarios for the given UI tes",
+    "external" : true,
+    "prompt_id" : 10,
+    "prompt_type" : "PROMPT"
+  },
+  "002 UI Test Cases Reviewer and Optimizer_prompt" : {
+    "description" : "This prompt helps to review the given detailed UI test cases and",
+    "external" : true,
+    "prompt_id" : 9,
+    "prompt_type" : "PROMPT"
+  },
+  "001 Generate Detailed UI Test Cases from User Story_prompt" : {
+    "description" : "This prompt helps to generate detailed UI test cases from the gi",
+    "external" : true,
+    "prompt_id" : 8,
+    "prompt_type" : "PROMPT"
+  },
+  "004 API Test Automation Code Generator_prompt" : {
+    "description" : "The 'API Test Automation Code Generator' is crafted to generate ",
+    "external" : true,
+    "prompt_id" : 7,
+    "prompt_type" : "PROMPT"
+  },
+  "003 BDD Generator for API Test Cases_prompt" : {
+    "description" : "This prompt generates BDD scenarios for the detailed API test ca",
+    "external" : true,
+    "prompt_id" : 6,
+    "prompt_type" : "PROMPT"
+  },
+  "002 API Detailed Test Cases Generator_prompt" : {
+    "description" : "The 'API Detailed Test Cases  Generator' is crafted to automate ",
+    "external" : true,
+    "prompt_id" : 4,
+    "prompt_type" : "PROMPT"
+  },
+  "001 API Test Case Checklist Generator_prompt" : {
+    "description" : "The 'API Test Case Checklist Generator' is crafted to automate t",
+    "external" : true,
+    "prompt_id" : 3,
+    "prompt_type" : "PROMPT"
+  },
+  "MDESCSOpenSpec_datasource" : {
+    "description" : "MDESCSOpenSpec",
+    "external" : true,
+    "prompt_id" : 8,
+    "prompt_type" : "DATASOURCE"
+  }
+}
