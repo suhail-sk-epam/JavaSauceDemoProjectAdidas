@@ -26,13 +26,23 @@ public class ProductPageSteps {
         driver.manage().window().maximize();
 
         // Navigate to product page
-        productPage = new ProductPage(driver);
+        productPage = new ProductPage();
         productPage.navigateToProductPage();
     }
 
     @When("the user scrolls through the product list")
     public void the_user_scrolls_through_the_product_list() {
         productPage.scrollThroughProductList();
+        System.out.println("@@@@Entered into PDF block-11");
+
+        try {
+            System.out.println("@@@@Entered into PDF block-22");
+            Thread.sleep(3000);
+            productPage.triggerPrintDialog();
+            productPage.confirmPrint();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Then("the products should be displayed with names, prices, and images")
@@ -49,7 +59,11 @@ public class ProductPageSteps {
         List<WebElement> images = productPage.getProductImages();
         assertTrue("Product images are not displayed!", images.size() > 0);
 
+        /*finally {
+            driver.quit();
+        }*/
+
         // Close the browser
-        driver.quit();
+        //driver.quit();
     }
 }
