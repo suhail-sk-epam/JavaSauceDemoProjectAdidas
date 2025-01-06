@@ -4,9 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 import java.util.List;
 
 public class ProductPage {
@@ -14,7 +14,8 @@ public class ProductPage {
     WebDriver driver;
     Robot robot;
 
-    {
+    public ProductPage(WebDriver driver) {  // Accept WebDriver in the constructor
+        this.driver = driver;
         try {
             robot = new Robot();
         } catch (AWTException e) {
@@ -67,5 +68,40 @@ public class ProductPage {
         Robot robot = new Robot();
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
+
+        Thread.sleep(2000);
+
+        // Type the path and filename
+        String filePath = "testPDF"; // Specify the path and filename
+        for (char c : filePath.toCharArray()) {
+            int keyCode = KeyEvent.getExtendedKeyCodeForChar(c);
+            if (Character.isUpperCase(c)) {
+                robot.keyPress(KeyEvent.VK_SHIFT);
+            }
+            robot.keyPress(keyCode);
+            robot.keyRelease(keyCode);
+            if (Character.isUpperCase(c)) {
+                robot.keyRelease(KeyEvent.VK_SHIFT);
+            }
+            Thread.sleep(1000); // add delay to ensure each keystroke is registered
+        }
+
+        // Press Enter to go to Save dialog
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+        Thread.sleep(2000);
+
+        // Press Enter to save the file
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+    }
+    public void bringWindowToFront() {
+        try {
+            // The title of the browser window you want to activate
+            String browserWindowTitle = "Swag Labs"; // Change this to the actual title, or part of it
+            Runtime.getRuntime().exec("powershell.exe (Get-Process | Where-Object { $_.MainWindowTitle -match '" + browserWindowTitle + "' }).SetForegroundWindow()");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
