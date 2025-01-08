@@ -1,5 +1,5 @@
 Feature: View Shopping Cart
-  Scenario :  View products in the cart
+  Scenario:  View products in the cart
     Given the user is on the product page
     When the user clicks on the cart icon
     Then the user should be navigated to the cart page

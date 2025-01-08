@@ -14,15 +14,18 @@ public class Hooks {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         scenario.log("Browser initialized and maximized.");
+        System.out.println("Browser initialized and maximized for Scenario: " + scenario.getName());
     }
 
     @After
     public void tearDown(Scenario scenario) {
         if (driver != null) {
             driver.quit();
-            scenario.log("Browser closed.");
+            scenario.log("Browser closed successfully.");
+            System.out.println("Browser closed successfully for Scenario: " + scenario.getName());
         }
     }
+
 
     public WebDriver getDriver() {
         return driver;

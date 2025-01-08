@@ -14,7 +14,8 @@ import org.junit.runner.RunWith;
                 "pretty",                             // Prints the Gherkin steps in the console
                 "html:target/cucumber-reports",  // Generates an HTML report
                 "json:target/cucumber.json",   // Generates a JSON report
-        //  "cucumber.publish.quiet=true"
+                "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
+                //  "cucumber.publish.quiet=true"
 
         },
         monochrome = true                           // Fails the test run if there are undefined or pending steps
