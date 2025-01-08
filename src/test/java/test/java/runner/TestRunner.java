@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         publish = false, // Set to true if you want to enable publishing
         //quiet = true,     // Set to true to disable the publishing prompt
-        features = "src/test/resources/features/feature3.feature", // Path to your feature files
+        features = "src/test/resources/features", // Path to your feature files
         glue = {"test.java.stepDefinitions"},               // Package containing step definitions
         plugin = {
                 "pretty",                             // Prints the Gherkin steps in the console

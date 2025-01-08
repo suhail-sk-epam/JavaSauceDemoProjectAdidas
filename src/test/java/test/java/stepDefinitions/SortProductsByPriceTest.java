@@ -1,24 +1,22 @@
+package test.java.stepDefinitions;
+
+import io.cucumber.java.After;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import com.saucedemo.pages.ProductSortPage;
+import test.java.pages.ProductPage;
 
 public class SortProductsByPriceTest {
 
     private WebDriver driver;
-    private ProductSortPage productSortPage;
-
-    @Given("the user is on the product page")
-    public void the_user_is_on_the_product_page() {
-        driver = new ChromeDriver();
-        driver.get("https://www.saucedemo.com/v1/inventory.html");
-        productSortPage = new ProductSortPage(driver);
-    }
+    private ProductPage productSortPage;
 
     @When("the user selects to sort products by price")
     public void the_user_selects_to_sort_products_by_price() {
-        productSortPage.select_sort_by_price();
+        productSortPage.selectSortByPrice();
     }
 
     @Then("the products should be displayed in ascending order of price")

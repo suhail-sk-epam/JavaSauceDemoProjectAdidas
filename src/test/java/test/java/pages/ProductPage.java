@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
@@ -27,7 +29,12 @@ public class ProductPage {
     private By productNames = By.className("inventory_item_name");
     private By productPrices = By.className("inventory_item_price");
     private By productImages = By.cssSelector(".inventory_item_img img");
+    private By sortByDropdownLocator = By.className("product_sort_container");
 
+    public void selectSortByPrice() {
+        Select dropdown = new Select(driver.findElement(sortByDropdownLocator));
+        dropdown.selectByVisibleText("Price (low to high)");  // Assumes text, needs actual value
+    }
     // Navigate to product page
     public void navigateToProductPage() {
         driver.get("https://www.saucedemo.com/v1/inventory.html");
