@@ -1,13 +1,17 @@
 package test.java.pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ProductPage {
 
@@ -23,11 +27,66 @@ public class ProductPage {
         }
     }
 
+    private String firstNameInput = "first-name";
+    private String lastNameInput = "last-name";
+    private String zipCodeInput = "postal-code";
     // Locators
     private By productNames = By.className("inventory_item_name");
     private By productPrices = By.className("inventory_item_price");
     private By productImages = By.cssSelector(".inventory_item_img img");
+    private By sortByDropdownLocator = By.className("product_sort_container");
+    private By addToCartButton = By.className("btn_primary");
+    public By continueButton = By.xpath("//input[@value='CONTINUE']");
+    private By cartIcon = By.className("shopping_cart_link");
+    private By yourCartHeader = By.xpath("//div[text()='Your Cart']");
+    private By productNameLocator = By.cssSelector(".product-name");
+    private By productQuantityLocator = By.cssSelector("input[name='quantity']");
+    private By productPriceLocator = By.cssSelector("span.price");
+    private By checkoutButtonLocator = By.className("btn_action");
+    private By checkoutHeader = By.xpath("//div[contains(text(),'Checkout')]");
+    private By orderConfirmationHeader = By.xpath("//h2[contains(text(),'THANK')]");
 
+    public void clickCheckoutButton() throws InterruptedException {
+        driver.findElement(checkoutButtonLocator).click();
+    }
+    public void enterUserDetails(String firstName, String lastName, String zipCode) {
+        driver.findElement(By.id(firstNameInput)).sendKeys(firstName);
+        driver.findElement(By.id(lastNameInput)).sendKeys(lastName);
+        driver.findElement(By.id(zipCodeInput)).sendKeys(zipCode);
+    }
+    public void viewCheckout() {
+        Assert.assertTrue(driver.findElement(checkoutHeader).isDisplayed());
+    }
+    public void navigateToCart() {
+        driver.findElement(cartIcon).click();
+    }
+    public void viewCart() {
+        Assert.assertTrue(driver.findElement(yourCartHeader).isDisplayed());
+    }
+    public void viewOrderConfirmation() {
+        Assert.assertTrue(driver.findElement(orderConfirmationHeader).isDisplayed());
+    }
+
+    public List<String> getProductDetails() {
+        List<WebElement> names = driver.findElements(productNameLocator);
+        List<WebElement> quantities = driver.findElements(productQuantityLocator);
+        List<WebElement> prices = driver.findElements(productPriceLocator);
+        return names.stream().map(WebElement::getText).collect(Collectors.toList());
+    }
+
+    public void clickAddToCart() {
+        driver.findElement(addToCartButton).click();
+    }
+
+
+    public String getCartCount() {
+        return driver.findElement(cartIcon).getText();
+    }
+
+    public void selectSortByPrice() {
+        Select dropdown = new Select(driver.findElement(sortByDropdownLocator));
+        dropdown.selectByVisibleText("Price (low to high)");  // Assumes text, needs actual value
+    }
     // Navigate to product page
     public void navigateToProductPage() {
         driver.get("https://www.saucedemo.com/v1/inventory.html");

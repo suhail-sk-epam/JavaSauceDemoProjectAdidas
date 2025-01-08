@@ -136,5 +136,11 @@
     "external" : true,
     "prompt_id" : 8,
     "prompt_type" : "DATASOURCE"
+  },
+  "Generate Detailed UI Test Cases from User Story_prompt" : {
+    "description" : "This prompt helps to generate detailed UI test cases from the gi",
+    "external" : true,
+    "prompt_id" : 44,
+    "prompt_type" : "PROMPT"
   }
 }
