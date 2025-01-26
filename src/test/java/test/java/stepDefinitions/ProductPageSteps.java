@@ -1,5 +1,7 @@
 package test.java.stepDefinitions;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -12,54 +14,47 @@ import org.junit.Assert;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import test.java.pages.ProductPage;
+import test.java.util.ExtentReportManager;
+import org.openqa.selenium.WebElement;
 import test.java.util.PDFContent;
 
 import java.util.List;
-import java.util.stream.Collectors;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import test.java.util.Screenshot;
 
 import static org.junit.Assert.assertTrue;
 
 public class ProductPageSteps {
 
-    WebDriver driver;
-    ProductPage productPage;
-    Screenshot screenshot = new Screenshot();
-    private static final Logger logger = LoggerFactory.getLogger(ProductPageSteps.class);
+    private WebDriver driver;
+    private ProductPage productPage;
+    private Scenario scenario;
+    private ExtentTest test;
     private List<String> capturedProductNames;
     private List<String> capturedProductPrices;
+    private static final Logger logger = LoggerFactory.getLogger(ProductPageSteps.class);
 
     public ProductPageSteps(Hooks hooks) {
         this.driver = hooks.getDriver();
     }
-    private Scenario scenario;
 
     @Before
     public void before(Scenario scenario) {
         this.scenario = scenario;
+        test = ExtentReportManager.getInstance().createTest(scenario.getName());
     }
 
     @Given("the user is on the product page")
     public void the_user_is_on_the_product_page() {
         try {
-            // Navigate to product page
             productPage = new ProductPage(driver);
             productPage.navigateToProductPage();
-            logger.info("Navigated to the product page.");
-
-            capturedProductNames = productPage.getProductNames().stream().map(WebElement::getText).collect(Collectors.toList());
-            capturedProductPrices = productPage.getProductPrices().stream().map(WebElement::getText).collect(Collectors.toList());
-            logger.info("Captured product names and prices from the page.");
-
-            scenario.log("User is on the product page with products listed.");
+            capturedProductNames = productPage.getProductNamesText();
+            capturedProductPrices = productPage.getProductPricesText();
+            test.pass("User successfully navigated to the product page.");
         } catch (Exception e) {
-            logger.error("Error navigating to the product page: ", e);
-            scenario.log("Failed to navigate to the product page.");
+            test.fail("Failed to navigate to the product page: " + e.getMessage());
             throw e;
         }
     }
@@ -68,11 +63,9 @@ public class ProductPageSteps {
     public void the_user_scrolls_through_the_product_list() {
         try {
             productPage.scrollThroughProductList();
-            logger.info("Scrolled through the product list.");
-            scenario.log("User scrolled through the product list.");
+            test.pass("User scrolled through the product list.");
         } catch (Exception e) {
-            logger.error("Error scrolling through the product list: ", e);
-            scenario.log("Failed to scroll through the product list.");
+            test.fail("Error scrolling through the product list: " + e.getMessage());
             throw e;
         }
     }
@@ -138,6 +131,7 @@ public class ProductPageSteps {
             assertTrue("No products were captured from the webpage.", false);
         }
     }
+
     @When("the user clicks on the Add to Cart button for a product")
     public void theUserClicksOnTheAddToCartButtonForAProduct() {
         try {
@@ -284,84 +278,30 @@ public class ProductPageSteps {
     @Then("the products should be displayed in ascending order of price")
     public void the_products_should_be_displayed_in_ascending_order_of_price() {
         try {
-            Assert.assertTrue("Products are not sorted by price", true);
-            logger.info("Verified that products are displayed in ascending order of price.");
+            Assert.assertTrue("Products are not sorted in ascending order of price.", productPage.isProductsSortedByPrice());
+            logger.info("Verified that products are sorted in ascending order of price.");
         } catch (Exception e) {
-            logger.error("Failed to verify product sorting by price.", e);
-            throw e;
-        }
-    }
-    @Given("the user is on the checkout page")
-    public void theUserIsOnTheCheckoutPage() throws InterruptedException {
-        try {
-            productPage = new ProductPage(driver);
-            productPage.navigateToProductPage();
-            logger.info("Navigated to the product page successfully.");
-
-            productPage.clickAddToCart();
-            logger.info("Clicked on 'Add to Cart' button for a product.");
-
-            productPage.navigateToCart();
-            logger.info("Navigated to the cart page.");
-
-            productPage.viewCart();
-            logger.info("Viewed the cart page successfully.");
-
-            productPage.clickCheckoutButton();
-            logger.info("Clicked on 'Checkout' button.");
-
-            productPage.viewCheckout();
-            logger.info("Navigated to the checkout page successfully.");
-
-            scenario.log("User successfully reached the checkout page.");
-        } catch (Exception e) {
-            logger.error("Error occurred while navigating to the checkout page: ", e);
-            scenario.log("Failed to reach the checkout page.");
-            throw e;
-        }
-    }
-
-    @And("the user reviews and confirms the order details")
-    public void theUserReviewsAndConfirmsTheOrderDetails() throws InterruptedException {
-        try {
-            productPage.viewCheckout();
-            logger.info("Viewed the checkout page for order details review.");
-            Thread.sleep(3000);
-            driver.findElement(productPage.continueButton).click();
-            logger.info("Clicked on 'Checkout' button to confirm order details.");
-
-            scenario.log("User successfully reviewed and confirmed order details.");
-        } catch (Exception e) {
-            logger.error("Error occurred while reviewing and confirming order details: ", e);
-            scenario.log("Failed to review and confirm order details.");
+            logger.error("Failed to verify sorting of products by price.", e);
             throw e;
         }
     }
 
     @AfterStep
-    public void afterEachStep() {
-        if (driver != null) {
-            String screenshotPath = screenshot.takeScreenshot(scenario.getName() + "-" + System.currentTimeMillis(), driver);
-            if (screenshotPath != null) {
-                scenario.attach(screenshotPath, "image/png", "Screenshot");
+    public void afterStep(Scenario scenario) {
+        try {
+            if (scenario.isFailed()) {
+                byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+                scenario.attach(screenshot, "image/png", "screenshot");
             }
-        } else {
-            logger.error("Driver is null, cannot take screenshot");
-        }
-
-        if (scenario.isFailed()) {
-            logger.error("Scenario failed: " + scenario.getName());
+        } catch (Exception e) {
+            logger.error("Error capturing screenshot.", e);
         }
     }
 
     @After
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-            logger.info("Browser closed successfully.");
-        } else {
-            logger.warn("Driver was already null during teardown.");
+    public void after(Scenario scenario) {
+        if (test != null) {
+            ExtentReportManager.getInstance().flush();
         }
     }
 }
-
