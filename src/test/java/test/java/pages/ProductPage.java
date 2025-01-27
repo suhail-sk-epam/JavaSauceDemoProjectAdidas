@@ -46,6 +46,16 @@ public class ProductPage {
     private By checkoutHeader = By.xpath("//div[contains(text(),'Checkout')]");
     private By orderConfirmationHeader = By.xpath("//h2[contains(text(),'THANK')]");
 
+    public List<String> getProductNamesText() {
+        List<WebElement> nameElements = driver.findElements(By.cssSelector(".product-name"));
+        return nameElements.stream().map(WebElement::getText).collect(Collectors.toList());
+    }
+
+    public List<String> getProductPricesText() {
+        List<WebElement> priceElements = driver.findElements(By.cssSelector(".product-price"));
+        return priceElements.stream().map(WebElement::getText).collect(Collectors.toList());
+    }
+
     public void clickCheckoutButton() throws InterruptedException {
         driver.findElement(checkoutButtonLocator).click();
     }
@@ -66,7 +76,22 @@ public class ProductPage {
     public void viewOrderConfirmation() {
         Assert.assertTrue(driver.findElement(orderConfirmationHeader).isDisplayed());
     }
+    public boolean isProductsSortedByPrice() {
+        List<WebElement> priceElements = getProductPrices();
+        double previousPrice = 0;
 
+        for (WebElement priceElement : priceElements) {
+            String priceText = priceElement.getText().replaceAll("[^0-9.]", ""); // Remove non-numeric characters
+            double currentPrice = Double.parseDouble(priceText);
+
+            if (currentPrice < previousPrice) {
+                return false; // Return false if the current price is less than the previous one
+            }
+
+            previousPrice = currentPrice;
+        }
+        return true; // Return true if the prices are in ascending order
+    }
     public List<String> getProductDetails() {
         List<WebElement> names = driver.findElements(productNameLocator);
         List<WebElement> quantities = driver.findElements(productQuantityLocator);
