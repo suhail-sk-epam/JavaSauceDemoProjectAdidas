@@ -5,26 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9507dd82-60e0-44e8-906f-066b84b0acd0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/JavaSauceDemoProjectAdidas.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/test/java/util/ExtentReportManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/extent-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/alita.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/java/pages/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/java/pages/ProductPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/java/runner/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/java/runner/TestRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/java/stepDefinitions/Hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/java/stepDefinitions/Hooks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/java/stepDefinitions/ProductPageSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/java/stepDefinitions/ProductPageSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/java/util/Screenshot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/java/util/Screenshot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/validate_product_info_in_pdf.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/validate_product_info_in_pdf.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/test/java/pages/ProductPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/test/java/pages/ProductPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/test/java/runner/TestRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/test/java/runner/TestRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/test/java/stepDefinitions/Hooks.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/test/java/stepDefinitions/Hooks.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/test/java/stepDefinitions/ProductPageSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/test/java/stepDefinitions/ProductPageSteps.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/test/java/util/Screenshot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/test/java/util/Screenshot.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/ExtentReport.html" beforeDir="false" afterPath="$PROJECT_DIR$/reports/ExtentReport.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/ProductListPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/ViewAvailableProductsSteps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/java/pages/LoginPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/java/pages/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/ProductPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/java/runner/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/runner/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/java/stepDefinitions/Hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Hooks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/java/stepDefinitions/ProductPageSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/ProductPageSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/java/stepDefinitions/Steps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/java/util/ExtentReportManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/util/ExtentReportManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/java/util/PDFContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/util/PDFContent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/java/util/Screenshot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/util/Screenshot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/view_available_products.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/features/view_available_products.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/test/java/pages/ProductPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/test/java/runner/TestRunner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/test/java/stepDefinitions/Hooks.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/test/java/stepDefinitions/ProductPageSteps.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/test/java/util/ExtentReportManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/test/java/util/PDFContent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/test/java/util/Screenshot.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +57,9 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Cucumber Java.Feature: AddProductToCart.executor": "Run",
+    "Cucumber Java.Feature: complete_purchase.executor": "Run",
+    "Cucumber Java.Feature: view_available_products.executor": "Run",
+    "Cucumber Java.Scenario: Add a single product to the cart.executor": "Run",
     "JUnit.TestRunner.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -67,16 +73,19 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Suhail_Shehzad\Desktop\FrequentlyUsed\TCC\India TCC\Adidas\project\JavaSauceDemoProjectAdidas\src\test\resources" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestRunner">
-    <configuration name="Feature: AddProductToCart" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Cucumber Java.Scenario: View products in the cart">
+    <configuration name="Feature: complete_purchase" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/AddProductToCart.feature" />
-      <option name="GLUE" value="test.java.stepDefinitions" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/complete_purchase.feature" />
+      <option name="GLUE" value="stepDefinitions" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="demoSeleniumBDD" />
       <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: AddProductToCart" />
+      <option name="SUGGESTED_NAME" value="Feature: complete_purchase" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -88,25 +97,93 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestRunner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Navigate to checkout from cart page" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/proceed_to_checkout.feature" />
+      <option name="GLUE" value="stepDefinitions" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="demoSeleniumBDD" />
+      <option name="NAME_FILTER" value="^Navigate to checkout from cart page$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Navigate to checkout from cart page$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Navigate to checkout from cart page" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.java.runner.*" />
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test.java.runner" />
-      <option name="MAIN_CLASS_NAME" value="test.java.runner.TestRunner" />
-      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: User completes a purchase" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/complete_purchase.feature" />
+      <option name="GLUE" value="stepDefinitions" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="demoSeleniumBDD" />
+      <option name="NAME_FILTER" value="^User completes a purchase$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^User completes a purchase$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: User completes a purchase" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: User sorts products by price" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/sort_products_by_price.feature" />
+      <option name="GLUE" value="stepDefinitions" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="demoSeleniumBDD" />
+      <option name="NAME_FILTER" value="^User sorts products by price$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^User sorts products by price$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: User sorts products by price" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: View products in the cart" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/view_cart.feature" />
+      <option name="GLUE" value="stepDefinitions" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="demoSeleniumBDD" />
+      <option name="NAME_FILTER" value="^View products in the cart$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^View products in the cart$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: View products in the cart" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestRunner" />
-        <item itemvalue="Cucumber Java.Feature: AddProductToCart" />
+        <item itemvalue="Cucumber Java.Scenario: View products in the cart" />
+        <item itemvalue="Cucumber Java.Scenario: User sorts products by price" />
+        <item itemvalue="Cucumber Java.Scenario: Navigate to checkout from cart page" />
+        <item itemvalue="Cucumber Java.Scenario: User completes a purchase" />
+        <item itemvalue="Cucumber Java.Feature: complete_purchase" />
       </list>
     </recent_temporary>
   </component>
@@ -120,5 +197,12 @@
       <updated>1737896336183</updated>
     </task>
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:io.cucumber:cucumber-java" />
+    <option featureType="dependencySupport" implementationName="java:io.reactivex.rxjava3:rxjava" />
+    <option featureType="dependencySupport" implementationName="java:org.seleniumhq.selenium:selenium-java" />
+    <option featureType="dependencySupport" implementationName="java:io.qameta.allure:allure-java-commons" />
+    <option featureType="dependencySupport" implementationName="java:org.projectlombok:lombok" />
   </component>
 </project>
