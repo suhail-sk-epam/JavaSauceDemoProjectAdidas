@@ -1,0 +1,1 @@
+Verified that product images are displayed.
