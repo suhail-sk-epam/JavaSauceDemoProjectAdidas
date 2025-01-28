@@ -6,10 +6,10 @@ import org.openqa.selenium.WebDriver;
 public class LoginPage {
     WebDriver driver;
 
-    By usernameField = By.id("username");
+    By usernameField = By.id("user-name");
     By passwordField = By.id("password");
     By loginButton = By.id("login-button");
-    By errorMessage = By.id("error-msg");
+    By errorMessage = By.xpath("//h3[@data-test='error']");
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;

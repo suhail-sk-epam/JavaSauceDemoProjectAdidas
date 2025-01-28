@@ -11,25 +11,25 @@ public class UserAuthenticationSteps {
     WebDriver driver;
     LoginPage loginPage;
 
+    public UserAuthenticationSteps(Hooks hooks) {
+        this.driver = hooks.getDriver();
+    }
+
     @Given("a registered user with valid credentials")
     public void a_registered_user_with_valid_credentials() {
-        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
-        driver = new ChromeDriver();
         driver.get("https://www.saucedemo.com/v1");
         loginPage = new LoginPage(driver);
     }
 
     @When("the user enters their username and password")
     public void the_user_enters_their_username_and_password() {
-        loginPage.enterUsername("valid_username");
-        loginPage.enterPassword("valid_password");
+        loginPage.enterUsername("standard_user");
+        loginPage.enterPassword("secret_sauce");
     }
 
-    @When("the user clicks the {string} button")
-    public void the_user_clicks_the_button(String button) {
-        if (button.equals("Login")) {
+    @And("the user clicks the Login button")
+    public void the_user_clicks_the_button() {
             loginPage.clickLoginButton();
-        }
     }
 
     @Then("the user should be logged in and redirected to their dashboard")
@@ -41,8 +41,6 @@ public class UserAuthenticationSteps {
 
     @Given("a registered user with invalid credentials")
     public void a_registered_user_with_invalid_credentials() {
-        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
-        driver = new ChromeDriver();
         driver.get("https://www.saucedemo.com/v1");
         loginPage = new LoginPage(driver);
     }
